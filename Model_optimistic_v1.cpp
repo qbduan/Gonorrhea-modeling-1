@@ -93,13 +93,13 @@ int main(int argc, char *argv[])
 
     //output files
     char temp1[100];
-    sprintf(temp1, "./output_files/OB_opt_recommended%d_regular%d_casual%d_%1.1f_%1.1f_%04d.txt", reconsc, regular, casual, par_rr, par_rcr, Runid); /////char temp[250]
+    sprintf(temp1, "./output_files_opt/OB_opt_recommended%d_regular%d_casual%d_%1.1f_%1.1f_%04d.txt", reconsc, regular, casual, par_rr, par_rcr, Runid); /////char temp[250]
     ofstream fp_output;
     fp_output.open(temp1, ios::app);
-    sprintf(temp1, "./output_files/OB_opt_spreadtree_recommended%d_regular%d_casual%d_%1.1f_%1.1f_%04d.txt", reconsc, regular, casual, par_rr, par_rcr, Runid); /////char temp[250]
+    sprintf(temp1, "./output_files_opt/OB_opt_spreadtree_recommended%d_regular%d_casual%d_%1.1f_%1.1f_%04d.txt", reconsc, regular, casual, par_rr, par_rcr, Runid); /////char temp[250]
     ofstream fp_output_spreadtree;
     fp_output_spreadtree.open(temp1, ios::app);
-    sprintf(temp1, "./output_files/OB_opt_outbreak_recommended%d_regular%d_casual%d_%1.1f_%1.1f_%04d.txt", reconsc, regular, casual, par_rr, par_rcr, Runid); /////char temp[250]
+    sprintf(temp1, "./output_files_opt/OB_opt_outbreak_recommended%d_regular%d_casual%d_%1.1f_%1.1f_%04d.txt", reconsc, regular, casual, par_rr, par_rcr, Runid); /////char temp[250]
     ofstream fp_outbrak;
     fp_outbrak.open(temp1, ios::app);
 
