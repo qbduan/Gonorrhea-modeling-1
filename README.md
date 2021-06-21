@@ -1,7 +1,8 @@
 # Gonorrhea-modeling-1
-Nneed download Armadillo C++ library from http://arma.sourceforge.net/download.html.
+Nneed download Armadillo C++ library from [Armadillo](http://arma.sourceforge.net/download.html).
+
  
-complie the source code:
+Complie the source code:
 
 g++ .\Model_optimistic.cpp -o .\Model_optimistic.exe -std=c++14
 
