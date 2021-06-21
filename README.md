@@ -4,9 +4,9 @@ Nneed download Armadillo C++ library from [Armadillo](http://arma.sourceforge.ne
  
 Complie the source code:
 
-'''
+```
 g++ .\Model_optimistic.cpp -o .\Model_optimistic.exe -std=c++14
-'''
+```
 
 There are six inputs for the program: running id, recommended level of testing (F/T), contact tracing of regular partners (F/T), contact tracing of casual partners (F/T), probability to test a regular partner, probability to test a casual partner, 
 
