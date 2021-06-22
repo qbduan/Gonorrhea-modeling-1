@@ -21,3 +21,4 @@ Run the EXE file as follows:
 ```
 .\Model_optimistic.exe 123 F F F 0.0 0.0
 ```
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5002980.svg)](https://doi.org/10.5281/zenodo.5002980)
