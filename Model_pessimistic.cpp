@@ -1465,11 +1465,11 @@ void outbreak_simulation(vec p_act, unsigned runid, unsigned my_years, unsigned 
                 pd0 = ceil((pd + 3) * unif01(generator));
                 if (sympt == 1)
                 {
-                    U = unif01(generator);
-                    men[infect_1st].periods(1, 0) = d + ceil(-log(0.65 * U) * 4 * unif01(generator)) - pd0;
-                    men[infect_1st].periods(1, 1) = d + ceil(-log(0.65 * U) * 4) - pd0;
-                    men[infect_1st].periods(1, 2) = d + ceil(-log(0.65 * U) * 4) + pd - pd0;
-                    men[infect_1st].periods(1, 3) = d + ceil(-log(0.65 * U) * 4) + pd + 7 - pd0;
+                    U = 0.082085 + 0.5244457 * unif01(generator);
+                    men[infect_1st].periods(1, 0) = d + ceil(-log( U) * 4 * unif01(generator)) - pd0;
+                    men[infect_1st].periods(1, 1) = d + ceil(-log( U) * 4) - pd0;
+                    men[infect_1st].periods(1, 2) = d + ceil(-log( U) * 4) + pd - pd0;
+                    men[infect_1st].periods(1, 3) = d + ceil(-log( U) * 4) + pd + 7 - pd0;
                 }
                 else if (sympt == 2)
                 {
@@ -1488,11 +1488,11 @@ void outbreak_simulation(vec p_act, unsigned runid, unsigned my_years, unsigned 
 
                 if (sympt == 1)
                 {
-                    U = unif01(generator);
-                    men[infect_1st].periods(2, 0) = d + ceil(-log(0.65 * U) * 4 * unif01(generator)) - pd0;
-                    men[infect_1st].periods(2, 1) = d + ceil(-log(0.65 * U) * 4) - pd0;
-                    men[infect_1st].periods(2, 2) = d + ceil(-log(0.65 * U) * 4) + pd - pd0;
-                    men[infect_1st].periods(2, 3) = d + ceil(-log(0.65 * U) * 4) + pd + 7 - pd0;
+                    U = 0.082085 + 0.5244457 * unif01(generator);
+                    men[infect_1st].periods(2, 0) = d + ceil(-log( U) * 4 * unif01(generator)) - pd0;
+                    men[infect_1st].periods(2, 1) = d + ceil(-log( U) * 4) - pd0;
+                    men[infect_1st].periods(2, 2) = d + ceil(-log( U) * 4) + pd - pd0;
+                    men[infect_1st].periods(2, 3) = d + ceil(-log( U) * 4) + pd + 7 - pd0;
                 }
                 else if (sympt == 2)
                 {
