@@ -2047,8 +2047,8 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
 {
     default_random_engine generator(rseed);
     std::uniform_real_distribution<double> unif01(0.0, 1.0);
-    std::uniform_real_distribution<double> gS(1.0, 3.0);
-    //std::gamma_distribution<double> gS(3.01, 0.8615); //truncate late.
+    //std::uniform_real_distribution<double> gS(1.0, 3.0);
+    std::gamma_distribution<double> gS(3.01, 0.8615); //truncate late.
     std::gamma_distribution<double> gAU(206.4, 0.4118);
     std::gamma_distribution<double> gO(201.6, 0.4167);
     std::gamma_distribution<double> gR(3702.857, 0.0972);
