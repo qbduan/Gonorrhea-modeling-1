@@ -1410,10 +1410,10 @@ void outbreak_simulation(vec p_act, unsigned runid, unsigned my_years, unsigned 
                 pd0 = ceil((pd + 3) * unif01(generator));
                 if(sympt == 1){
                     U = unif01(generator);
-                    men[infect_1st].periods(1, 0) = d + ceil(-log(0.65 * U) * 4 * unif01(generator)) - pd0;
-                    men[infect_1st].periods(1, 1) = d + ceil(-log(0.65 * U) * 4) - pd0;
-                    men[infect_1st].periods(1, 2) = d + ceil(-log(0.65 * U) * 4) + pd - pd0;
-                    men[infect_1st].periods(1, 3) = d + ceil(-log(0.65 * U) * 4) + pd + 7 - pd0;
+                    men[infect_1st].periods(1, 0) = d + ceil(-log( U) * 4 * unif01(generator)) - pd0;
+                    men[infect_1st].periods(1, 1) = d + ceil(-log( U) * 4) - pd0;
+                    men[infect_1st].periods(1, 2) = d + ceil(-log( U) * 4) + pd - pd0;
+                    men[infect_1st].periods(1, 3) = d + ceil(-log( U) * 4) + pd + 7 - pd0;
                 }
                 else if (sympt == 2)
                 {
@@ -1432,10 +1432,10 @@ void outbreak_simulation(vec p_act, unsigned runid, unsigned my_years, unsigned 
 
                 if(sympt == 1){
                     U = unif01(generator);
-                    men[infect_1st].periods(2, 0) = d + ceil(-log(0.65 * U) * 4 * unif01(generator)) - pd0;
-                    men[infect_1st].periods(2, 1) = d + ceil(-log(0.65 * U) * 4) - pd0;
-                    men[infect_1st].periods(2, 2) = d + ceil(-log(0.65 * U) * 4) + pd - pd0;
-                    men[infect_1st].periods(2, 3) = d + ceil(-log(0.65 * U) * 4) + pd + 7 - pd0;
+                    men[infect_1st].periods(2, 0) = d + ceil(-log( U) * 4 * unif01(generator)) - pd0;
+                    men[infect_1st].periods(2, 1) = d + ceil(-log( U) * 4) - pd0;
+                    men[infect_1st].periods(2, 2) = d + ceil(-log( U) * 4) + pd - pd0;
+                    men[infect_1st].periods(2, 3) = d + ceil(-log( U) * 4) + pd + 7 - pd0;
                 }
                 else if (sympt == 2)
                 {
@@ -2056,10 +2056,10 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                             B.status(1) = 1;
                             pd = round(gS(generator));
                             U = unif01(generator);
-                            B.periods(1, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            B.periods(1, 1) = today + ceil(-log(0.65 * U) * 4);
-                            B.periods(1, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
-                            B.periods(1, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                            B.periods(1, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            B.periods(1, 1) = today + ceil(-log( U) * 4);
+                            B.periods(1, 2) = today + ceil(-log( U) * 4) + pd;
+                            B.periods(1, 3) = today + ceil(-log( U) * 4) + pd + 7;
                             B.resistance(1) = A.resistance(0);
                         }
                         else
@@ -2123,12 +2123,12 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                         {
                             A.status(1) = 1;
                             pd = round(gS(generator));
-                            U = unif01(generator);
+                            U = 0.082085 + 0.5244457 * unif01(generator);
 
-                            A.periods(1, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            A.periods(1, 1) = today + ceil(-log(0.65 * U) * 4);
-                            A.periods(1, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
-                            A.periods(1, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                            A.periods(1, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            A.periods(1, 1) = today + ceil(-log( U) * 4);
+                            A.periods(1, 2) = today + ceil(-log( U) * 4) + pd;
+                            A.periods(1, 3) = today + ceil(-log( U) * 4) + pd + 7;
                             A.resistance(1) = B.resistance(0);
                         }
                         else
@@ -2163,11 +2163,11 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                         {
                             B.status(2) = 1;           //periods set and resistance set
                             pd = round(gS(generator)); //ceil(2.6+randn*2.24);
-                            U = unif01(generator);
-                            B.periods(2, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            B.periods(2, 1) = today + ceil(-log(0.65 * U) * 4);
-                            B.periods(2, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
-                            B.periods(2, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                            U = 0.082085 + 0.5244457 * unif01(generator);
+                            B.periods(2, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            B.periods(2, 1) = today + ceil(-log( U) * 4);
+                            B.periods(2, 2) = today + ceil(-log( U) * 4) + pd;
+                            B.periods(2, 3) = today + ceil(-log( U) * 4) + pd + 7;
                             B.resistance(2) = A.resistance(0);
                         }
                         else
@@ -2232,12 +2232,12 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                         {
                             A.status(2) = 1;           //periods set and resistance set
                             pd = round(gS(generator)); //ceil(2.6+randn*2.24);
-                            U = unif01(generator);
+                            U = 0.082085 + 0.5244457 * unif01(generator);
 
-                            A.periods(2, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            A.periods(2, 1) = today + ceil(-log(0.65 * U) * 4);
-                            A.periods(2, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
-                            A.periods(2, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                            A.periods(2, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            A.periods(2, 1) = today + ceil(-log( U) * 4);
+                            A.periods(2, 2) = today + ceil(-log( U) * 4) + pd;
+                            A.periods(2, 3) = today + ceil(-log( U) * 4) + pd + 7;
                             A.resistance(2) = B.resistance(0);
                         }
                         else
@@ -2281,11 +2281,11 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                         {
                             B.status(1) = 1;           //periods set and resistance set
                             pd = round(gS(generator)); //round(6.3+rand*1.4);
-                            U = unif01(generator);
-                            B.periods(1, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            B.periods(1, 1) = today + ceil(-log(0.65 * U) * 4);
-                            B.periods(1, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
-                            B.periods(1, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                            U = 0.082085 + 0.5244457 * unif01(generator);
+                            B.periods(1, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            B.periods(1, 1) = today + ceil(-log( U) * 4);
+                            B.periods(1, 2) = today + ceil(-log( U) * 4) + pd;
+                            B.periods(1, 3) = today + ceil(-log( U) * 4) + pd + 7;
                             B.resistance(1) = A.resistance(2);
                         }
                         else
@@ -2313,11 +2313,11 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                         {
                             A.status(2) = 1; //periods set and resistance set
                             pd = round(gS(generator));
-                            U = unif01(generator);
-                            A.periods(2, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            A.periods(2, 1) = today + ceil(-log(0.65 * U) * 4);
-                            A.periods(2, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
-                            A.periods(2, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                            U = 0.082085 + 0.5244457 * unif01(generator);
+                            A.periods(2, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            A.periods(2, 1) = today + ceil(-log( U) * 4);
+                            A.periods(2, 2) = today + ceil(-log( U) * 4) + pd;
+                            A.periods(2, 3) = today + ceil(-log( U) * 4) + pd + 7;
                             A.resistance(2) = B.resistance(1);
                         }
                         else
@@ -2351,12 +2351,12 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                         {
                             B.status(2) = 1;           //periods set and resistance set
                             pd = round(gS(generator)); //ceil(2.6+randn*2.24);
-                            U = unif01(generator);
-                            B.periods(2, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            B.periods(2, 1) = today + ceil(-log(0.65 * U) * 4);
-                            B.periods(2, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
+                            U = 0.082085 + 0.5244457 * unif01(generator);
+                            B.periods(2, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            B.periods(2, 1) = today + ceil(-log( U) * 4);
+                            B.periods(2, 2) = today + ceil(-log( U) * 4) + pd;
 
-                            B.periods(2, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 11;
+                            B.periods(2, 3) = today + ceil(-log( U) * 4) + pd + 11;
                             B.resistance(2) = A.resistance(1);
                         }
                         else
@@ -2384,12 +2384,12 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                         {
                             A.status(1) = 1;           //periods set and resistance set
                             pd = round(gS(generator)); //ceil(6.3+rand*1.4);
-                            U = unif01(generator);
-                            A.periods(1, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                            A.periods(1, 1) = today + ceil(-log(0.65 * U) * 4);
-                            A.periods(1, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
+                            U = 0.082085 + 0.5244457 * unif01(generator);
+                            A.periods(1, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                            A.periods(1, 1) = today + ceil(-log( U) * 4);
+                            A.periods(1, 2) = today + ceil(-log( U) * 4) + pd;
 
-                            A.periods(1, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                            A.periods(1, 3) = today + ceil(-log( U) * 4) + pd + 7;
                             A.resistance(1) = B.resistance(2);
                         }
                         else
@@ -2422,13 +2422,13 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                     {
                         B.status(1) = 1;           //periods set and resistance set
                         pd = round(gS(generator)); //round(6.3+rand*1.4);
-                        U = unif01(generator);
+                        U = 0.082085 + 0.5244457 * unif01(generator);
 
-                        B.periods(1, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                        B.periods(1, 1) = today + ceil(-log(0.65 * U) * 4);
-                        B.periods(1, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
+                        B.periods(1, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                        B.periods(1, 1) = today + ceil(-log( U) * 4);
+                        B.periods(1, 2) = today + ceil(-log( U) * 4) + pd;
 
-                        B.periods(1, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                        B.periods(1, 3) = today + ceil(-log( U) * 4) + pd + 7;
                         B.resistance(1) = A.resistance(1);
                     }
                     else
@@ -2457,12 +2457,12 @@ void transAB(Nodeman &A, Nodeman &B, mat events, unsigned typem, unsigned int to
                     {
                         A.status(1) = 1;           //periods set and resistance set
                         pd = round(gS(generator)); //ceil(6.3+rand*1.4);
-                        U = unif01(generator);
+                        U = 0.082085 + 0.5244457 * unif01(generator);
 
-                        A.periods(1, 0) = today + ceil(-log(0.65 * U) * 4 * unif01(generator));
-                        A.periods(1, 1) = today + ceil(-log(0.65 * U) * 4);
-                        A.periods(1, 2) = today + ceil(-log(0.65 * U) * 4) + pd;
-                        A.periods(1, 3) = today + ceil(-log(0.65 * U) * 4) + pd + 7;
+                        A.periods(1, 0) = today + ceil(-log( U) * 4 * unif01(generator));
+                        A.periods(1, 1) = today + ceil(-log( U) * 4);
+                        A.periods(1, 2) = today + ceil(-log( U) * 4) + pd;
+                        A.periods(1, 3) = today + ceil(-log( U) * 4) + pd + 7;
                         A.resistance(1) = B.resistance(1);
                     }
                     else
